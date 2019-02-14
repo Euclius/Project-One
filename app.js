@@ -1,3 +1,10 @@
 $(document).ready(function(){
-    alert("poin")
+console.log('working')
+
+
+
+
+
+
+
 })

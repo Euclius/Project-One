@@ -5,6 +5,15 @@ grid-column-start: 2;
 grid-column-end: 4;} */
 /* h1 {display:} */
 h1 {text-align: center;}
+
+strong {font-size: 48px;
+visibility}
+.ontop {display:grid;}
+#undsc #keyword{
+    grid-column:2;
+    grid-row:2;
+}
+#keyword {font-size:48px;}
 canvas {
     height: 340px;
     width: 400px;
