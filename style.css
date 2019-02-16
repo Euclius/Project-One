@@ -8,7 +8,7 @@ h1 {text-align: center;}
 
 strong {font-size: 48px;
 visibility}
-.ontop {display:grid;}
+/* .ontop {display:grid;} */
 #undsc #keyword{
     grid-column:2;
     grid-row:2;
@@ -20,3 +20,4 @@ canvas {
     background: yellowgreen;
 }
 body {background: blueviolet;}
+ul {list-style: none;}
