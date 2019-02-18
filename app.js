@@ -22,9 +22,14 @@ $(document).ready(function () {
         $('.keyword').append(undsc)
     })
     var undsc = word.length
-
+// for (i = 0; i < undsc; i++) {
+//     hangmanwords = [hangmanwords.slice(0, i*2+1), '', hangmanwords.slice(i*2+1)].join('')   saw this online, but I didn't quite understand it
+// }
     // })
-
+    // function correctGuess() {
+    //     const mub = ($('.input').val())
+    //     $('.keyword').indexOf(`${undsc[i]}`)
+    // }
     // })
     // down below is my attempt to move the guesses to the attempted location. it currently succeeds
     function attemptedGuess() {
@@ -32,6 +37,11 @@ $(document).ready(function () {
         $('#attempts').append(`<li>${sub}</li>`)
         //when I get this damn thing to work, I'll try to limit the characters
     }
+// function alterUndsc() {
+//     let gu = .input.value[0]
+//     var dub = ($('.input').val())
+//     $('.keyword').join(`${dub}`)
+// }
 
     // if input is not one character, then I want it to decline input
     //if input is one character, I want it to accept the input
@@ -45,16 +55,27 @@ $(document).ready(function () {
     $('.guessbutn').on('click', function () {
         if ($('.input').val().length !== 1) {
             alert('please enter only one character')
-        } else {
-            attemptedGuess()
-            // const sub = ($('.input').val())
-            // $('#attempts').append(`<li>${sub}</li>`)
         }
-    })
+        else {
+            attemptedGuess()
+        } 
 
 })
+})
+//pseudo code for correct guess
+// if attempted guess = undsc join the attempted guess
+// I think I need nother loop for this, but ignore tht for now becuse i'm not sure how to write it, but it must becuse it will need to loop through the empty underscores
+//somehow I need the letter to be reveeeeeeled, which i think i could use join/ push/ or pop
+// push will push it to the end or in the correct index order, but the word is not predictible (sp wrong, I know).
+// peter told me about contain and splice/ slice
+    // $('.guessbutn').on('click', function () {
+    // if ($(attemptedGuess() == undsc)
+    //          
+    //         join(" ") 
 
-
-// const alphabet= ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-// 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-// 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    // for (var i = 0; i <word.length; i++) {             but do I need to make a new index?
+//      if(word[i] ===#attempts) {
+//      undsc[i] = #attempts
+// }
+//    }
+    // })
