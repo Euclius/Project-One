@@ -9,11 +9,6 @@ h1 {text-align: center;}
 strong {font-size: 48px;
 visibility}
 /* .ontop {display:grid;} */
-#undsc #keyword{
-    grid-column:2;
-    grid-row:2;
-}
-#keyword {font-size:48px;}
 canvas {
     height: 340px;
     width: 400px;
@@ -21,3 +16,9 @@ canvas {
 }
 body {background: blueviolet;}
 ul {list-style: none;}
+
+.keyword {
+    display: flex;
+    justify-content: space-around;
+    width: 15vw;
+}

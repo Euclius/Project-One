@@ -4,64 +4,93 @@ $(document).ready(function () {
     let hangmanwords = ["chicken", "vampire", "abdomens", "scrutiny", "sphinx", "iceboxing", "tranquilizer"]
     let word = ''
 
+
     $('.begin').on('click', getRandomWord = () => {
         let subm = Math.floor(Math.random() * hangmanwords.length)      //I don't like that this is random rn, but when I finally compplete the basic logic, I'll make it go in order of the array from simpliest to most difficult
         word = hangmanwords[subm]
         console.log(word.length)
         console.log(word)
-        // var undsc = ["<div class='underline'</div>"]
-        // for (let i = 0; i < word.length;i++) {     //looked at Seth's code because he has his underscores performing what I'd like, but it does nothing. Leaving it here for now as reference.
-        //     $('.underline').append(undsc)
-        // var undsc = word.length
-        let undsc = []
-        for (let i = 0; i < word.length; i++) {
+        // let undsc = []
+        for (let i = 0; i < word.length; i++) {     
             console.log(word[i])
-            undsc[i] = "_" + " "
-            console.log(undsc)
+            // undsc[i] = "_" + " "
+            // console.log(undsc)
+            $('.keyword').append(`<div class="${word[i]}"> _ </div>`)
         }
-        $('.keyword').append(undsc)
+        // $('.keyword').append(undsc)
     })
     var undsc = word.length
-// for (i = 0; i < undsc; i++) {
-//     hangmanwords = [hangmanwords.slice(0, i*2+1), '', hangmanwords.slice(i*2+1)].join('')   saw this online, but I didn't quite understand it
 // }
     // })
     // function correctGuess() {
-    //     const mub = ($('.input').val())
+    //     let right = ($('.input').val())
     //     $('.keyword').indexOf(`${undsc[i]}`)
     // }
+
+
     // })
-    // down below is my attempt to move the guesses to the attempted location. it currently succeeds
     function attemptedGuess() {
         const sub = ($('.input').val())
+        console.log(sub)
+        $(`.${sub}`).text(sub)
         $('#attempts').append(`<li>${sub}</li>`)
-        //when I get this damn thing to work, I'll try to limit the characters
     }
 // function alterUndsc() {
-//     let gu = .input.value[0]
-//     var dub = ($('.input').val())
-//     $('.keyword').join(`${dub}`)
+//     let guess = ($('.input').value[0])
+//     let undsc = ($('.input').val())
+//     $('.keyword').join(`${undsc}`)
 // }
 
-    // if input is not one character, then I want it to decline input
-    //if input is one character, I want it to accept the input
-    // if ('.input'.length === 1) {
-    //     return
-    // } else if ('.input'.length !==1) {
-    //     alert("hjk")
-    //     // shake($('.input'))
-    // } else { ('input'.length === null) 
-    // }
+
+//  function alterUndsc() {
+//     if {
+//     for (let i = 0; i > hangmanwords.length. i++){
+//          if ($('.input').val() == undsc[i])
+//          $('.keyword')indexOf(undsc[i].toString())
+//      }
+//     } else {
+
+//     }
+// }
     $('.guessbutn').on('click', function () {
         if ($('.input').val().length !== 1) {
             alert('please enter only one character')
         }
         else {
             attemptedGuess()
-        } 
+        }
+    //     } else {alterUndsc () 
+    // } else {}
+        // else {
+        //     let right = $(this).text
+        //     ($(attemptedGuess()== undsc.length))
+        //     $('.keyword')indexOf(right).toString()
+        // }
+        // { else if
+        // }
+        
+        
+        // } else if {(
+        //     ($('.input').val() == undsc[]
+        //     ($('.keyword')join(undsc).toString()))})
+        
+        })
+    })
+// for (i = 0; i < undsc; i++) {
+    //     hangmanwords = [hangmanwords.slice(0, i*2+1), '', hangmanwords.slice(i*2+1)].join('')
 
-})
-})
+// $('.guessbutn').on('click', function () {
+// for (i = 0; i < hangmanwords.length. i++) {
+//     var right = $(this).text
+//     var index = word.indexOf(right)
+
+//     if ($('.input').val() == undsc[i])
+//     undsc[i] = right
+//     $('.keyword')after(right).toString()
+//  } else {
+
+//     }
+// })
 //pseudo code for correct guess
 // if attempted guess = undsc join the attempted guess
 // I think I need nother loop for this, but ignore tht for now becuse i'm not sure how to write it, but it must becuse it will need to loop through the empty underscores
@@ -79,3 +108,24 @@ $(document).ready(function () {
 // }
 //    }
     // })
+// code below is how to not be correct. using it as a reference to not repet myself
+     // } else {
+        //     for (i = 0; i < word.length; i++) {
+        //         var right = $(this).text
+        //         var index = word.indexOf(right)
+        //         if (index !==-1) {
+        //             undsc[index] = right
+        //             $('.keyword')after(right).toString()
+        //         }
+        //     }
+        // }
+        
+// for (i=0; i < hangmanwords.length; i++) {
+//     var guess = $(this).text
+//     var undscArray = [undsc]
+//     var index = hangmanwords.indexOf(guess)
+//     if (index !== -1) {
+//         undscArray[index] = guess
+//         $('.keyword').after(undscArray).toString()
+//     }
+// }
