@@ -14,25 +14,28 @@ tree = word
         // let undsc = []
         for (let i = 0; i < word.length; i++) {     
             console.log(word[i])
-            // undsc[i] = "_" + " "
-            // console.log(undsc)
+
             $('.keyword').append(`<div class="${word[i]}"> _ </div>`)
         
         
         }
     
-        // $('.keyword').append(undsc)
+
     })
 let score = 6
 // $('.begin').click(function(){
 //     $(subm)[0].reset()
 // })
-
+resetFunc = ()=> {
+    document.location.reload()
+}
 
 $('.score').html(score)
 
 // function lose () {
-//     if 
+//     if (score = 0) {
+
+// }
 // }
 
 
