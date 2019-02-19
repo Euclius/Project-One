@@ -21,15 +21,14 @@ $(document).ready(function () {
     
         // $('.keyword').append(undsc)
     })
-    var undsc = word.length
-
-$('.begin').click(function(){
-    $(subm)[0].reset()
-})
-
-
+var undsc = word.length
+let score = 6
+// $('.begin').click(function(){
+//     $(subm)[0].reset()
+// })
 
 
+$('.score').html(score)
 
 
     function attemptedGuess() {
@@ -37,6 +36,10 @@ $('.begin').click(function(){
         console.log(sub)
         $(`.${sub}`).text(sub)
         $('#attempts').append(`<li>${sub}</li>`)
+    $(sub).on('click', function(){
+    score = score-1
+    $('.score').html(score)
+})
     }
 
 
