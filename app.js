@@ -5,6 +5,7 @@ $(document).ready(function () {
     let word = ''
     let fullWord
     let score = 6
+    let winCounter = 0
     // how the game begins
     $('.begin').on('click', getRandomWord = () => {
         $('.begin').attr('disabled', true)
@@ -24,7 +25,7 @@ $(document).ready(function () {
 
     })
 
-
+    // $('.winCounter').html(winCounter)
     $('.score').html(score)
 
     resetFunc = () => {
@@ -41,6 +42,7 @@ emptyFunc = () => {
     }
     function win() {
         $('.begin').attr('disabled', false)
+        // winCounter++
         $.confirm({
             title: "You saved the man!",
             content: "Would you enjoy playing again?",
