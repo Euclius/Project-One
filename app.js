@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    console.log('js connected')
+    // console.log('js connected')
 
     let hangmanwords = ["chicken", "vampire", "abdomens", "scrutiny", "sphinx", "iceboxing", "tranquilizer"]
     let word = ''
     let fullWord
     let score = 6
-    let winCounter = 0
+    // let successCounter = 0
     // how the game begins
     $('.begin').on('click', getRandomWord = () => {
         $('.begin').attr('disabled', true)
@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     })
 
-    // $('.winCounter').html(winCounter)
+    // $('.successCounter').html(successCounter)
     $('.score').html(score)
 
     resetFunc = () => {
@@ -42,7 +42,7 @@ emptyFunc = () => {
     }
     function win() {
         $('.begin').attr('disabled', false)
-        // winCounter++
+        // successCounter++
         $.confirm({
             title: "You saved the man!",
             content: "Would you enjoy playing again?",
@@ -63,23 +63,23 @@ emptyFunc = () => {
 
     function attemptedGuess() {
         const sub = ($('.input').val())
-        console.log(sub)
+        // console.log(sub)
         $(`.${sub}`).text(sub)
         $('#attempts').append(`<li>${sub}</li>`)
-        console.log('fullWord: ', fullWord);
-        console.log('sub: ', sub);
+        // console.log('fullWord: ', fullWord);
+        // console.log('sub: ', sub);
         if (fullWord.includes(sub) !== true) {
             score--
             $(`.${'score'}`).text(score)
-            console.log(score)
+            // console.log(score)
             if (score === 0) {
                 lose()
             }
         }
         if (fullWord.includes(sub) == true) {
             $(`.${sub}`).addClass('right')
-            console.log($('.right').length)
-            console.log('right')
+            // console.log($('.right').length)
+            // console.log('right')
             if ($('.right').length === fullWord.length) {
                 win()
             }
