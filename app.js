@@ -3,10 +3,10 @@ $(document).ready(function () {
 
     let hangmanwords = ["chicken", "vampire", "abdomens", "scrutiny", "sphinx", "iceboxing", "tranquilizer"]
     let word = ''
-    let tree
-
+    let tree 
+// how the game begins
     $('.begin').on('click', getRandomWord = () => {
-        let subm = Math.floor(Math.random() * hangmanwords.length)      //I don't like that this is random rn, but when I finally compplete the basic logic, I'll make it go in order of the array from simpliest to most difficult
+        let subm = Math.floor(Math.random() * hangmanwords.length) 
         word = hangmanwords[subm]
         tree = word
         console.log(word.length)
@@ -23,23 +23,16 @@ $(document).ready(function () {
 
     })
     let score = 6
-    // $('.begin').click(function(){
-    //     $(subm)[0].reset()
-    // })
-    resetFunc = () => {
-        document.location.reload()
-    }
 
     $('.score').html(score)
 
-    // function lose () {
-    //     if (score = 0) {    
-    // resetFunc = () => {
-    //     document.location.reload()
-    // }
-
-    // }
-    // }
+    resetFunc = () => {
+        document.location.reload()
+    }  
+    function lose () {
+            alert('you have lost the game. :[. The page will now reload.')    
+resetFunc()
+    }
 
 
 
@@ -53,10 +46,13 @@ $(document).ready(function () {
         if (tree !== sub) {
             score--
             $(`.${'score'}`).text(score)
-           var indexOf(tree)
             console.log(score)
+        if (score === 0) {
+            lose()
         }
-    }
+        } 
+        }
+    
     // if attempted guess does not match the div class, then score is subtracted by one
     //and if score reaches zero, then inflict gameover function
 
@@ -76,8 +72,10 @@ $(document).ready(function () {
     })
 })
 
-
-
+//
+//
+//
+//includes research
 //seth has for if(count === wordArr.length){
     //alert you win
 //}
