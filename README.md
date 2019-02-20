@@ -1,7 +1,10 @@
 My project was to create the game of hangman.
 I ended up using jQuery for most of it and a library of jQuery that is called craftpip. I have animate linked within my html, but I didn't end up using it. In version two, I'd like to add the picture of someone at the gallows and the steps of making the gallow and the person being hung. My win counter would work properly in accordance with how I have the score as well.
+
 Link to my trello https://trello.com/b/PuLoeuw9/project-one
+
 My wireframe is inside my trello.
+
 To my netifly account https://sleepy-noether-1e380e.netlify.com
 
 resources:
