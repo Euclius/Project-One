@@ -7,14 +7,24 @@ To my netifly account https://sleepy-noether-1e380e.netlify.com
 resources:
 the minds of: Peter, Cameron, Chad, Dezren, Taylor, Seth, John.
 
-urls: 1.  https://www.w3schools.com/tags/att_button_disabled.asp 
+urls: 1.  https://www.w3schools.com/tags/att_button_disabled.asp
+
 2. https://api.jquery.com/empty/
+
 3. https://craftpip.github.io/jquery-confirm/
+
 4. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
 5. https://stackoverflow.com/questions/35387864/hangman-gameplay-in-javascript
+
 6. http://jsfiddle.net/Behseini/tcmtw9ga/2/
+
 7. https://stackoverflow.com/questions/43700715/hangman-game-replacing-blanks-w-letters
+
 8. https://jsfiddle.net/q8qg40nz/8/
+
 9. https://stackoverflow.com/questions/35460999/how-to-make-a-hangman-game-in-js
+
 10. https://nostarch.com/download/JS4K_ch7.pdf
+
 11. https://codepen.io/cathydutton/pen/ldazc
