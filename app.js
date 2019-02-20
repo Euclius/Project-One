@@ -4,6 +4,7 @@ $(document).ready(function () {
     let hangmanwords = ["chicken", "vampire", "abdomens", "scrutiny", "sphinx", "iceboxing", "tranquilizer"]
     let word = ''
     let tree 
+    let score = 6
 // how the game begins
     $('.begin').on('click', getRandomWord = () => {
         let subm = Math.floor(Math.random() * hangmanwords.length) 
@@ -22,7 +23,7 @@ $(document).ready(function () {
 
 
     })
-    let score = 6
+    
 
     $('.score').html(score)
 
@@ -34,7 +35,7 @@ $(document).ready(function () {
 resetFunc()
     }
 
-
+//function of guessing
 
     function attemptedGuess() {
         const sub = ($('.input').val())
@@ -59,7 +60,7 @@ resetFunc()
 
 
 
-
+//what happens when the submit button is clicked
 
     $('.guessbutn').on('click', function () {
         if ($('.input').val().length !== 1) {
@@ -71,20 +72,3 @@ resetFunc()
 
     })
 })
-
-//
-//
-//
-//includes research
-//seth has for if(count === wordArr.length){
-    //alert you win
-//}
-
-//and for his scoring
-// if(letter !==word[i]) {
-// amountOfTimesLetterIsNotInWord += 1
-// if (amountOfTimesLetterIsNotInWord ===word.length) {
-    //limit -=1
-//}
-//}
-//with limit defined globablly

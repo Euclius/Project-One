@@ -21,4 +21,11 @@ ul {list-style: none;}
     display: flex;
     justify-content: space-around;
     width: 15vw;
+    font-size:24px;
+}
+.text {
+    font-size:24px;
+}
+.score {
+    font-size:24px;
 }
