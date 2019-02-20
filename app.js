@@ -3,19 +3,19 @@ $(document).ready(function () {
 
     let hangmanwords = ["chicken", "vampire", "abdomens", "scrutiny", "sphinx", "iceboxing", "tranquilizer"]
     let word = ''
-    let fullWord 
+    let fullWord
     let score = 6
-// how the game begins
+    // how the game begins
     $('.begin').on('click', getRandomWord = () => {
-        let subm = Math.floor(Math.random() * hangmanwords.length) 
+        $('.begin').attr('disabled', true)
+        let subm = Math.floor(Math.random() * hangmanwords.length)
         word = hangmanwords[subm]
         fullWord = word
-        console.log(word.length)
-        console.log(word)
-        // let undsc = []
+        // console.log(word.length)
+        // console.log(word)
         for (let i = 0; i < word.length; i++) {
-            console.log(word[i])
-
+            // console.log(word[i])
+            // console.log(word)
             $('.keyword').append(`<div class="${word[i]}"> _ </div>`)
 
 
@@ -23,34 +23,40 @@ $(document).ready(function () {
 
 
     })
-    
+
 
     $('.score').html(score)
 
     resetFunc = () => {
         document.location.reload()
-    }  
-    function lose () {
-            alert('you have lost the game. :[. The page will now reload.')    
-resetFunc()
     }
-    function win () {
-        confirm({
-            title:"You saved the man!",
-            content:"Would you enjoy playing again?",
+emptyFunc = () => {
+    $('.right').empty()
+    $('#attempts').empty()
+}
+    function lose() {
+        alert('you have lost the game. :[. The page will now reload.')
+        resetFunc()
+    }
+    function win() {
+        $('.begin').attr('disabled', false)
+        $.confirm({
+            title: "You saved the man!",
+            content: "Would you enjoy playing again?",
             buttons: {
-                Yes: function (){
-                    resetFunc()
+                Yes: function () {
+                    emptyFunc()
+                    $('.begin').attr('disabled', false)
                 },
-                No: function (){
-                    preventDefault()
+                No: function () {
+                    
 
                 }
             }
         })
     }
 
-//function of guessing
+    //function of guessing
 
     function attemptedGuess() {
         const sub = ($('.input').val())
@@ -63,21 +69,21 @@ resetFunc()
             score--
             $(`.${'score'}`).text(score)
             console.log(score)
-        if (score === 0) {
-            lose()
+            if (score === 0) {
+                lose()
+            }
         }
-        if (fullWord)
-        } 
+        if (fullWord.includes(sub) == true) {
+            $(`.${sub}`).addClass('right')
+            console.log($('.right').length)
+            console.log('right')
+            if ($('.right').length === fullWord.length) {
+                win()
+            }
         }
-    
-    // if attempted guess does not match the div class, then score is subtracted by one
-    //and if score reaches zero, then inflict gameover function
 
-
-
-
-//what happens when the submit button is clicked
-
+    }
+    //what happens when the submit button is clicked
     $('.guessbutn').on('click', function () {
         if ($('.input').val().length !== 1) {
             alert('please enter only one character')
