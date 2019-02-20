@@ -33,6 +33,7 @@ $(document).ready(function () {
 emptyFunc = () => {
     $('.right').empty()
     $('#attempts').empty()
+    // $('.score').empty()
 }
     function lose() {
         alert('you have lost the game. :[. The page will now reload.')
@@ -49,7 +50,7 @@ emptyFunc = () => {
                     $('.begin').attr('disabled', false)
                 },
                 No: function () {
-                    
+                    $('.begin').attr('disabled', true)
 
                 }
             }
