@@ -8,7 +8,6 @@ resources:
 the minds of: Peter, Cameron, Chad, Dezren, Taylor, Seth, John.
 
 urls: 1.  https://www.w3schools.com/tags/att_button_disabled.asp 
-
 2. https://api.jquery.com/empty/
 3. https://craftpip.github.io/jquery-confirm/
 4. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
