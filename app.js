@@ -12,11 +12,11 @@ $(document).ready(function () {
         let subm = Math.floor(Math.random() * hangmanwords.length)
         word = hangmanwords[subm]
         fullWord = word
-        // console.log(word.length)
-        // console.log(word)
+        console.log(word.length)
+        console.log(word)
         for (let i = 0; i < word.length; i++) {
-            // console.log(word[i])
-            // console.log(word)
+            console.log(word[i])
+            console.log(word)
             $('.keyword').append(`<div class="${word[i]}"> _ </div>`)
 
 
@@ -63,23 +63,23 @@ emptyFunc = () => {
 
     function attemptedGuess() {
         const sub = ($('.input').val())
-        // console.log(sub)
+        console.log(sub)
         $(`.${sub}`).text(sub)
         $('#attempts').append(`<li>${sub}</li>`)
-        // console.log('fullWord: ', fullWord);
-        // console.log('sub: ', sub);
+        console.log('fullWord: ', fullWord);
+        console.log('sub: ', sub);
         if (fullWord.includes(sub) !== true) {
             score--
             $(`.${'score'}`).text(score)
-            // console.log(score)
+            console.log(score)
             if (score === 0) {
                 lose()
             }
         }
         if (fullWord.includes(sub) == true) {
             $(`.${sub}`).addClass('right')
-            // console.log($('.right').length)
-            // console.log('right')
+            console.log($('.right').length)
+            console.log('right')
             if ($('.right').length === fullWord.length) {
                 win()
             }
