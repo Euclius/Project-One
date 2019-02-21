@@ -34,6 +34,7 @@ $(document).ready(function () {
 emptyFunc = () => {
     $('.right').empty()
     $('#attempts').empty()
+    $('.keyword').empty()
     // $('.score').empty()
 }
     function lose() {
