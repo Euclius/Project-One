@@ -1,22 +1,22 @@
 $(document).ready(function () {
     // console.log('js connected')
 
-    let hangmanwords = ["chicken", "vampire", "abdomens", "scrutiny", "sphinx", "iceboxing", "tranquilizer"]
+    let hangmanwords = ["chicken", "vampire", "abdomens", "scrutiny", "sphinx", "iceboxing", "tranquilizer", "stirrup", "hankerchief", "shamrock", "typical"]
     let word = ''
     let fullWord
     let score = 6
-    // let successCounter = 0
+    let successCounter = 0
     // how the game begins
     $('.begin').on('click', getRandomWord = () => {
         $('.begin').attr('disabled', true)
         let subm = Math.floor(Math.random() * hangmanwords.length)
         word = hangmanwords[subm]
         fullWord = word
-        console.log(word.length)
-        console.log(word)
+        // console.log(word.length)
+        // console.log(word)
         for (let i = 0; i < word.length; i++) {
-            console.log(word[i])
-            console.log(word)
+            // console.log(word[i])
+            // console.log(word)
             $('.keyword').append(`<div class="${word[i]}"> _ </div>`)
 
 
@@ -25,25 +25,28 @@ $(document).ready(function () {
 
     })
 
-    // $('.successCounter').html(successCounter)
+    $('.successCounter').html(successCounter)
     $('.score').html(score)
 
     resetFunc = () => {
         document.location.reload()
     }
+// what occurs when won
 emptyFunc = () => {
     $('.right').empty()
     $('#attempts').empty()
     $('.keyword').empty()
-    // $('.score').empty()
 }
+//what occurs when losing
     function lose() {
         alert('you have lost the game. :[. The page will now reload.')
         resetFunc()
     }
+    //what occurs after winning
     function win() {
         $('.begin').attr('disabled', false)
-        // successCounter++
+        successCounter++
+        $(`.${'successCounter'}`).text(successCounter)
         $.confirm({
             title: "You saved the man!",
             content: "Would you enjoy playing again?",
@@ -64,23 +67,23 @@ emptyFunc = () => {
 
     function attemptedGuess() {
         const sub = ($('.input').val())
-        console.log(sub)
+        // console.log(sub)
         $(`.${sub}`).text(sub)
         $('#attempts').append(`<li>${sub}</li>`)
-        console.log('fullWord: ', fullWord);
-        console.log('sub: ', sub);
+        // console.log('fullWord: ', fullWord);
+        // console.log('sub: ', sub);
         if (fullWord.includes(sub) !== true) {
             score--
             $(`.${'score'}`).text(score)
-            console.log(score)
+            // console.log(score)
             if (score === 0) {
                 lose()
             }
         }
         if (fullWord.includes(sub) == true) {
             $(`.${sub}`).addClass('right')
-            console.log($('.right').length)
-            console.log('right')
+            // console.log($('.right').length)
+            // console.log('right')
             if ($('.right').length === fullWord.length) {
                 win()
             }
