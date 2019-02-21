@@ -20,7 +20,7 @@ ul {list-style: none;}
 .keyword {
     display: flex;
     justify-content: space-around;
-    width: 15vw;
+    width: 18vw;
     font-size:24px;
 }
 .text {
